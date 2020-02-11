@@ -3,7 +3,13 @@
 <head>
 	<title>Login</title>
 </head>
-<?php include "../header/header.php"; ?>
+<?php 
+include "../header/header.php"; 
+include "actionlogin.php";
+?>
+
+
+
 <body class="loginSignupbody">
 
 	<div id="login">

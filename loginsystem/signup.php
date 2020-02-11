@@ -4,7 +4,11 @@
 	<title></title>
 </head>
 
-<?php include "../header/header.php"; ?>
+<?php 
+include "../header/header.php"; 
+include "actionsignup.php";
+
+?>
 
 
 <body class="loginSignupbody">
@@ -23,9 +27,14 @@
 
 
                             <div class="form-group">
-                                <label for="fullname" class="text-info">Full Name:</label><br>
-                                <input type="text" name="fullname" id="fullname" class="form-control" value="<?php echo $fullname; ?>">
-                            </div> <span class="error"><?php echo $fullnameErr; ?></span>
+                                <label for="firstname" class="text-info">First Name:</label><br>
+                                <input type="text" name="firstname" id="firstname" class="form-control" value="<?php echo $firstname; ?>">
+                            </div> <span class="error"><?php echo $firstnameErr; ?></span>
+
+                            <div class="form-group">
+                                <label for="lastname" class="text-info">Last Name:</label><br>
+                                <input type="text" name="lastname" id="lastname" class="form-control" value="<?php echo $lastname; ?>">
+                            </div> <span class="error"><?php echo $lastnameErr; ?></span>
 
                             <div class="form-group">
                                 <label for="email" class="text-info">Email:</label><br>
