@@ -23,15 +23,61 @@ if (isset($_SESSION["id"])) {
 <body class="profilebody">
 
 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">KSA</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <form method="GET" action="" class="input-group" style="padding-right: 10px">
+
+
+              <input type="text" name="Search" class="form-control" placeholder="Search for..." >
+
+              <span class="input-group-btn">
+                <button type="submit" name="searchBtn" class="btn btn-secondary" type="button">Go!</button>
+              </span>
+            </form>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="profile.php"><?php echo $dbfirstname ?></a>
+          </li>
+          <li>
+          <a class="nav-link js-scroll-trigger"  href="home.php">Home</a>
+          </li>
+          <li>
+          <a class="nav-link js-scroll-trigger"  href="loginsystem/login.php">Setting</a>
+
+
+          </li>
+          <a class="nav-link js-scroll-trigger"  href="../index.php">Logout</a>
+
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
 
     <div class="row py-5 px-4">
-    <div class="col-xl-4 col-md-6 col-sm-10 mx-auto">
+    <div class="col-xl-8 col-md-6 col-sm-10 mx-auto">
 
         <!-- Profile widget -->
-        <div class="bg-white shadow rounded overflow-hidden">
+        
+                    <form method="post"> 
+
+                        <div class="bg-white shadow rounded overflow-hidden">
             <div class="px-4 pt-0 pb-4 bg-dark">
                 <div class="media align-items-end profile-header">
-                    <div class="profile mr-3"><img src="https://d19m59y37dris4.cloudfront.net/university/1-1-1/img/teacher-4.jpg" alt="..." width="130" class="rounded mb-2 img-thumbnail"><a href="#" class="btn btn-dark btn-sm btn-block">Edit profile</a></div>
+                    <div class="profile mr-3"><img src="https://d19m59y37dris4.cloudfront.net/university/1-1-1/img/teacher-4.jpg" alt="..." width="130" class="rounded mb-2 img-thumbnail">
+                        <div>
+                            <button> <a href="#" class="btn btn-dark btn-sm btn-block">Change Profile</a></button>
+                        </div>
+                    </form>
+                    </div>
                     <div class="media-body mb-5 text-white">
                         <h4 class="mt-0 mb-0"><?php echo $dbfirstname . $dblastname ?></h4>
                         <p class="small mb-4"> <i class="fa fa-map-marker mr-2"></i><?php echo $dbfirstname ?></p>
@@ -55,8 +101,11 @@ if (isset($_SESSION["id"])) {
                     <h5 class="mb-0">Recent photos</h5><a href="#" class="btn btn-link text-muted">Show all</a>
                 </div>
                 <div class="row">
-                    <div class="col-lg-6 mb-2 pr-lg-1"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556294928/nicole-honeywill-546848-unsplash_ymprvp.jpg" alt="" class="img-fluid rounded shadow-sm"></div>
-                    <div class="col-lg-6 mb-2 pl-lg-1"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556294927/dose-juice-1184444-unsplash_bmbutn.jpg" alt="" class="img-fluid rounded shadow-sm"></div>
+                    <div class="col-lg-4 mb-2 pr-lg-1"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556294928/nicole-honeywill-546848-unsplash_ymprvp.jpg" alt="" class="img-fluid rounded shadow-sm"></div>
+                    <div class="col-lg-4 mb-2 pl-lg-1"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556294927/dose-juice-1184444-unsplash_bmbutn.jpg" alt="" class="img-fluid rounded shadow-sm"></div>
+
+                    <div class="col-lg-4 mb-2 pl-lg-1"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556294927/dose-juice-1184444-unsplash_bmbutn.jpg" alt="" class="img-fluid rounded shadow-sm"></div>
+
                     <div class="col-lg-6 pr-lg-1 mb-2"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556294926/cody-davis-253925-unsplash_hsetv7.jpg" alt="" class="img-fluid rounded shadow-sm"></div>
                     <div class="col-lg-6 pl-lg-1"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556294928/tim-foster-734470-unsplash_xqde00.jpg" alt="" class="img-fluid rounded shadow-sm"></div>
                 </div>

@@ -36,7 +36,7 @@ if (isset($_POST['btnlogin'])) {
         $username = $row['username'];
         $dbpassword = $row['password'];
 
-      if ($password == $dbconnectionpassword) {
+      if ($password == $dbpassword) {
           $_SESSION['id'] = $id;
           header("Location:../userdashboard/profile.php");
         }
