@@ -1,5 +1,6 @@
 <?php 
 session_start();
+
 if (isset($_SESSION["id"])) {
     include "../dbconnection/connection.php";
     $id = $_SESSION["id"];
@@ -13,6 +14,8 @@ if (isset($_SESSION["id"])) {
 }
 
 ?>
+
+
 
 <!DOCTYPE html>
 <html>
@@ -109,17 +112,40 @@ if (isset($_SESSION["id"])) {
                     <div class="col-lg-6 pr-lg-1 mb-2"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556294926/cody-davis-253925-unsplash_hsetv7.jpg" alt="" class="img-fluid rounded shadow-sm"></div>
                     <div class="col-lg-6 pl-lg-1"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556294928/tim-foster-734470-unsplash_xqde00.jpg" alt="" class="img-fluid rounded shadow-sm"></div>
                 </div>
+
+
+                <?php 
+                include "../dbconnection/connection.php";
+                $result_posts = mysqli_query($conn, "SELECT * FROM posts INNER JOIN users ON posts.post_id = users.id ORDER BY post_id DESC ");
+
+                while ($row = mysqli_fetch_assoc($result_posts)) 
+                    
+                      
+
+                   
+                { ?>
+                
                 <div class="py-4">
                     <h5 class="mb-3">Recent posts</h5>
                     <div class="p-4 bg-light rounded shadow-sm">
-                        <p class="font-italic mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                      <h5 class="mb-3"> <?php echo $row['firstname'] ?></h5>
+                        <p class="font-italic mb-0"><?php echo $row['post_description'];?> </p>
                         <ul class="list-inline small text-muted mt-3 mb-0">
                             <li class="list-inline-item"><i class="fa fa-comment-o mr-2"></i>12 Comments</li>
                             <li class="list-inline-item"><i class="fa fa-heart-o mr-2"></i>200 Likes</li>
                         </ul>
                     </div>
                 </div>
+                
+
+
+                <?php } 
+                   
+
+                ?>
+                
             </div>
+           
         </div><!-- End profile widget -->
 
     </div>
