@@ -1,10 +1,10 @@
     <?php 
-    include "../header/homeheader.php";
+    include "../userdashboard/profilesession.php";
     ?>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">KSA</a>
+      <a class="navbar-brand js-scroll-trigger"  href="#page-top">KSA</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -21,6 +21,9 @@
               </span>
             </form>
           </li>
+          <div class="mr-2">
+                                    <img class="rounded-circle" width="30" src="https://picsum.photos/50/50" alt="">
+                                </div>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="profile.php"><?php echo $dbfirstname ?></a>
           </li>

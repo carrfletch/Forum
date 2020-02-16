@@ -6,8 +6,15 @@
 
 <?php 
 
-include "header/header.php"
+include "header/header.php";
+session_start();
+include "dbconnection/connection.php";
 
+if(isset($_SESSION["id"])) {
+    
+    header("location:userdashboard/profile.php");
+
+}
 ?>
 
 <body>

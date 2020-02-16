@@ -9,6 +9,8 @@
 </head>
 <?php 
 include "../header/homeheader.php";
+include "../navbar/navbar.php";
+
 ?>
 <body>
     <nav class="navbar navbar-light bg-white">
