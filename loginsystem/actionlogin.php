@@ -1,9 +1,11 @@
 
 <?php
-include "../dbconnection/connection.php";
 session_start();
-if(isset($_SESSION["id"])) {
+include "../dbconnection/connection.php";
 
+if(isset($_SESSION["id"])) {
+    
+    
 
   header("Location:../userdashboard/profile.php");
 }
