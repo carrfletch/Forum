@@ -107,7 +107,10 @@ if (isset($_POST["btnshare"]))
                             <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
                                 <div class="form-group">
                                     <label class="sr-only" for="message">post</label>
-                                    <textarea name="post" class="form-control" id="message" rows="3" placeholder="What are you thinking?"></textarea>
+                                    <input name="post" class="form-control" id="message" rows="3" placeholder="What are you thinking?">
+                                    
+                                        
+                                    
                                     
                                 </div><span class="error"><?php echo $postErr; ?> </span>
                                     
@@ -147,7 +150,7 @@ if (isset($_POST["btnshare"]))
 
                 <?php 
                 include "../dbconnection/connection.php";
-                $view_posts = mysqli_query($conn, "SELECT * FROM posts INNER JOIN users ON posts.post_id = users.id ORDER BY post_id DESC ");
+                $view_posts =mysqli_query($conn, "SELECT * FROM `posts` INNER JOIN users ON posts.id = users.id ORDER BY post_id DESC ");
 
                 while ($row = mysqli_fetch_assoc($view_posts)) {
                   ?>
