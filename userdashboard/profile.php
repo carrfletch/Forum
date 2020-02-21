@@ -2,6 +2,11 @@
 ?>
 
 <?php 
+ session_start();
+ $id="";
+ $idsession = $_SESSION['id'];
+ 
+    
  include "../dbconnection/connection.php";
 $post = $postErr = "";
 if (isset($_POST["btnshare"])) 
@@ -14,8 +19,8 @@ if (isset($_POST["btnshare"]))
   if ($post) 
   {
 
-    $sql = "INSERT INTO posts (post_description)
-          VALUES ('$post')";
+    $sql = "INSERT INTO posts (post_description,id)
+          VALUES ('$post','$idsession')";
       mysqli_query($conn, $sql);
   }
 }
@@ -187,10 +192,8 @@ if (isset($_POST["btnshare"]))
 
                     </div>
                     <div class="card-body">
-                        <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>10 min ago</div>
-                        <a class="card-link" href="#">
-                            <h5 class="card-title">Lorem ipsum dolor sit amet, consectetur adip.</h5>
-                        </a>
+                        <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i><?php echo $row['created'];; ?></div>
+                        
 
                         <p class="card-text">
                             <?php echo $row['post_description'];?>
