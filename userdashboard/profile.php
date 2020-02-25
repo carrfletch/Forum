@@ -45,7 +45,7 @@ if (isset($_POST["btnshare"]))
 
 
     <div class="row py-5 px-4">
-    <div class="col-xl-8 col-md-6 col-sm-10 mx-auto">
+        <div class="col-xl-8 col-md-6 col-sm-10 mx-auto">
 
         <!-- Profile widget -->
         
@@ -61,8 +61,8 @@ if (isset($_POST["btnshare"]))
                     </form>
                     </div>
                     <div class="media-body mb-5 text-white">
-                        <h4 class="mt-0 mb-0"><?php echo $dbfirstname . $dblastname ?></h4>
-                        <p class="small mb-4"> <i class="fa fa-map-marker mr-2"></i><?php echo $dbfirstname ?></p>
+                        <h4 class="mt-0 mb-0"><?php echo $dbfirstname . " " . $dblastname ?></h4>
+                        <p class="small mb-4"> <i class="fa fa-map-marker mr-2"></i><?php echo $row['username'] ?></p>
                     </div>
                 </div>
             </div>
@@ -111,8 +111,8 @@ if (isset($_POST["btnshare"]))
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
                                 <div class="form-group">
-                                    <label class="sr-only" for="message">post</label>
-                                    <input name="post" class="form-control" id="message" rows="3" placeholder="What are you thinking?">
+                                    <label class="sr-only" for="message">post</label><textarea
+                                    name="post" class="form-control" id="message" rows="3" placeholder="What are you thinking?"></textarea>  
                                     
                                         
                                     
@@ -171,8 +171,8 @@ if (isset($_POST["btnshare"]))
                                     <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
                                 </div>
                                 <div class="ml-2">
-                                    <div class="h5 m-0"><?php echo $row['firstname'] ?></div>
-                                    <div class="h7 text-muted">Miracles Lee Cross</div>
+                                    <div class="h5 m-0"><?php echo $row['firstname']. " " . $row['lastname'] ?></div>
+                                    <div class="h7 text-muted"><?php echo $row['username'] ?></div>
                                 </div>
                             </div>
                             <div>
@@ -205,6 +205,8 @@ if (isset($_POST["btnshare"]))
                         <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
                     </div>
                 </div>
+            </div>
+            </div>    
                 <?php  
                    
                     }
